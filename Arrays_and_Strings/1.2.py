@@ -13,12 +13,17 @@ class Solution:
             else: word_map[i] = 1
             
         for j in self.w_2:
-            print(word_map)
             if(j in word_map):
                 if(word_map[j] <= 0): return False
                 word_map[j] -= 1
             else: return False
             
+        return True
+    
+    def n_log_n(self):
+        self.w_1 =sorted(self.w_1)
+        self.w_2 =sorted(self.w_2)
+        if(self.w_1 != self.w_2): return False
         return True
     
 print("input the first word")
@@ -27,4 +32,4 @@ print("input the second word")
 word2 = input()
 
 sol = Solution(word1, word2)
-print(sol.o_of_n())
+print(sol.n_log_n())
